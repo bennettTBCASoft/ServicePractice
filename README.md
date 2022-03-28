@@ -25,8 +25,7 @@
 > Service 被啟動後會執行 onCreate()方法，並自動呼叫 **onStartCommand() 方法**，我們可以將要執行的程式撰寫在 **onStartCommand() 方法**中，而當Service需要結束時，呼叫 **stopSelf() 方法**讓他結束程序，此時會進入onDestroy() 的環節。
 > onStartCommand() 方法是Service最重要的執行階段，它會告訴系統如何重啟Servoce，如異常是否要重新啟動。而執行中的Service如果又接收到Activity發出startService()的請求，Service會執行onStartCommand()，而不會再次執行onCreate()。換言之，onStartCommand()扮演著**接受外來請求並操作 Service 的角色**
 
-:::info
-onStartCommand()
+- onStartCommand()
 1. 第一個參數 **Intent** 可接收由Activity啟動時夾帶的資訊
 2. 第二個參數 **flags** 表示啟動服務的方式
 3. 第三個參數 **startId** 為啟動的識別標籤
@@ -39,6 +38,6 @@ onStartCommand()
 | START_STICKY     | 若Service被終止時，系統會嘗試重啟，並再次執行onStartCommand()，但不會重傳Intent的資料     |
 | START_REDELIVER_STICKY     | 與上面不同的是，此方法Intent的資料會被重傳     |
 
-:::
+
 
 ###### tags: `kotlin` `Service`
